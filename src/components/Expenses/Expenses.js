@@ -5,15 +5,17 @@ import ExpensesFilter from '../NewExpense/ExpensesFilter';
 import ExpensesList from './ExpensesList';
 import ExpensesChart from './ExpensesChart';
 const Expenses = (props) => {
-  const [filteredyear, setfilteredyear] = useState('2020');
+  const [filteredyear, setfilteredyear] = useState('2022');
   const filterChangeHandler = selectedYear => {
     // console.log("Expenses.js");
-    // console.log(selectedYear);
+     //console.log(selectedYear);
     setfilteredyear(selectedYear);
 
   };
 
   const filteredExpense = props.items.filter(expense=>{
+    console.log(expense.date.getFullYear().toString());
+    
     return expense.date.getFullYear().toString() === filteredyear;
   });
 
